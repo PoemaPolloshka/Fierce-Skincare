@@ -4,8 +4,42 @@ include_once 'controllers/UserController.php';
 $user = new UserController();
 if(isset($_POST['butoniS'])){
     $user->insert($_POST);
-    echo
-    "<script> alert ('Te dhenat jane regjistruar me sukses!');</script>";
+    echo "<script> alert ('Te dhenat jane regjistruar me sukses!');</script>";
+}
+?>
+<?php
+include_once 'Input.php';
+include_once 'FormValidate.php';
+
+if(Input::exists()){
+  $validate=new FormValidate();
+  $validation = $validate->check($_POST, array (
+     'name' => array(
+         'required' => true,
+         'min' => 2,
+         'max' => 20,
+  ),
+    'password' => array(
+        'required' => true,
+        'min' => 6
+    ),
+    'number' => array(
+        'required' => true,
+        'min' => 9
+    ),
+    'email' => array(
+      'unique' => 'email'
+    )
+  ));
+
+  if($validation->passed()){
+      echo 'Passed';
+  }else{
+foreach($validation->errors() as $errors){
+  echo $error, '<br>';
+}
+  }
+   
 }
 ?>
 <!DOCTYPE html>
@@ -25,13 +59,13 @@ if(isset($_POST['butoniS'])){
                 <form  class="aa " style="height:470px" name="myform" method="POST" action="SignIn.php" onsubmit="return validateform()" >  
     
               <h1 >Sign in form</h1>
-              <input type="name" class="inputi" name="name"placeholder="Enter name">
+              <input type="name" class="inputi" name="name"placeholder="Enter name" value="<?php echo Input::get('name');?>" >
               <br>
-              <input type="email" class="inputi" name="emailS"placeholder="Enter e-mail">
+              <input type="email" class="inputi" name="email"placeholder="Enter e-mail" value="<?php echo Input::get('email');?>">
               <br>
-              <input type="password" class="inputi " name="passwordS" placeholder="Enter password">
+              <input type="password" class="inputi " name="password" placeholder="Enter password" value="<?php echo Input::get('password');?>">
               <br>
-              <input type="number" class="inputi " name="number" placeholder="Enter number">
+              <input type="number" class="inputi " name="number" placeholder="Enter number" value="<?php echo Input::get('number');?>">
               <br>
               <input type="submit" name="butoniS" class="inputi" id="a1" >
               <br>
@@ -44,17 +78,7 @@ if(isset($_POST['butoniS'])){
         <script src="main.js"></script>
     </body>
 </html>
-<?php
-    require_once 'FormValidation.php';
 
-    $forma = new FormValidation();
-    if(isset($_POST['email1']) && isset($_POST['password1'])){
-        $forma->validoEmail();
-        $forma->validoPass();
-    }else{
-      header('loaction:projekti.php');
-    }
-?>
 
 
 

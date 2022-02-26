@@ -21,10 +21,10 @@ function visitPage(){
   var w = window.open('login.php');      
     }
 
-  /* function validateform(){  
-      var email=document.myform.name.value;  
-      var password=document.myform.password.value;  
-        
+   function validateform(){  
+      const email=document.getElementByName('email');  
+      const password=document.getElementbyName('password');
+
       if (email==null || email==""){  
         alert("Email can't be blank");  
         return false;  
@@ -34,11 +34,11 @@ function visitPage(){
         }  else{
           alert("You are registred!");
         }
-      }*/
+      }
     
 
-    document.getElementsByName("password").pattern = "^([A-Z][a-z]+)\d{3}$";
-    document.getElementsByName("email").pattern = " (\w\.?)+@[\w\.-]+\.\w{2,}";
+    document.getElementByName("password").pattern = "^([A-Z][a-z]+)\d{3}$";
+    document.getElementByName("email").pattern = " (\w\.?)+@[\w\.-]+\.\w{2,}";
    
    
   

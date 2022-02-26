@@ -1,19 +1,19 @@
 <?php
  class FormValidation{
     
-   public function validoEmail(){
-       $email= $request['email1'];
+   public function validoEmail($request){
+       $email= $request['email'];
        $pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^";
     if (!preg_match ($pattern,$email) ){  
-        $ErrMsg = "Email is not valid.";  
+        $ErrMsg = '<script> alert("Email is not valid.");</script>';  
                 echo $ErrMsg;  
     }else {  
-        echo "Your valid email address is: " .$email;  
+        echo  "Your valid email address is: " .$email;  
     }  
    }
 
-    public function validoPass(){
-        $password=$request['password1'];
+    public function validoPass($request){
+        $password=$request['password'];
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
@@ -28,26 +28,6 @@
 
         }
     }
-
-  /*   public function validoSubmit(){
-        if(isset($_POST['butoniLogin'])) {  
-            if($nameErr == "" && $emailErr == "" && $mobilenoErr == "" && $genderErr == ""  && $agreeErr == "") {  
-                echo "<h3 color = #FF0001> <b>You have sucessfully registered.</b> </h3>";  
-                echo "<h2>Your Input:</h2>";  
-                echo "Name: " .$name;  
-                echo "<br>";  
-                echo "Email: " .$email;  
-                echo "<br>";  
-                echo "Mobile No: " .$mobileno;  
-                echo "<br>";   
-                echo "Gender: " .$gender;  
-            } else {  
-                echo "<h3> <b>You didn't filled up the form correctly.</b> </h3>";  
-            }  
-            }  */
-        
-
-    //  }
 
     }
 

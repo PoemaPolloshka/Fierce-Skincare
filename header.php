@@ -1,10 +1,46 @@
+
+<?php
+function logout()
+{
+    session_start();
+    session_unset();
+    session_destroy();
+    unset($_SESSION['user_id'], $_SESSION['email'], $_SESSION['loggedin']);
+
+    unset($_GET['logout']);
+    header("location:login.php");
+}
+
+if (isset($_GET['logout'])) {
+    logout();
+}
+?>
+
+<?php
+include_once 'login-validimi.php';
+$val = new Validimi();
+$val->validimi();
+
+$hide = "";
+
+if (!isset($_SESSION['email'])) {
+    header("location:login.php");
+} else {
+    if ($_SESSION['role'] == "admin") {
+        $hide = "";
+    } else {
+        $hide = "hide";
+    }
+    ?>
 <div class="headerdiv">
         <img src="img/logo.png" id="logostyle">
         <div class="iconDiv">
             <button  class="iconbuttons"><i class="fa fa-flag"></i></button>
             <button class="iconbuttons"><i  class="fa fa-shopping-bag"></i></button>
             <button class="iconbuttons" ><i class="fa fa-heart"></i></button>
-            <button class="iconbuttons" ><i onclick="visitPage()" class="fa fa-user"></i></button>  
+            <button class="iconbuttons" ><i onclick="visitPage()" class="fa fa-user"></i></button> 
+            <a class="iconbuttons" href='header.php?logout=true'><i class="fa fa-sign-out"></i></a>
+ 
         </div>
     <form id="headerForm" method="POST">
         <input type="search" placeholder="Search" name="search" aria-label="Search through site content" id="inputHeader">
@@ -24,7 +60,7 @@
          <a href="projekti.php" class="linkat  ">HOME</a> &nbsp;&nbsp; 
           <a href="shop.php" class="linkat "> SHOP</a> &nbsp; &nbsp; 
           <a href="Concerns.php" class="linkat "> CONCERNS</a>&nbsp; &nbsp;
-          <a href="Concerns.php" class="linkat <?php echo $hide ?>"> DASHBOARD</a>&nbsp; &nbsp;
+          <a href="Dashboard.php" class="linkat <?php echo $hide ?>"> DASHBOARD</a>&nbsp; &nbsp;
 
           </p>
           </div>
@@ -32,3 +68,6 @@
     <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <?php
+}
+?>

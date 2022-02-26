@@ -38,10 +38,6 @@ if(isset($_POST['butoniS'])){
                
 
             </form>  
-
-            <?php 
-    //require_once 'Log-in-Validimi.php';
-    ?>
           </div>
         </div>
    

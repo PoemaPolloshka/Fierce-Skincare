@@ -1,4 +1,4 @@
- *{
+*{
     margin: 0;
     padding: 0;
 }
@@ -8,12 +8,47 @@ body {
     font-size: 13px;
 }
 
-header,
-table {
+.TitleForRegister, .dashboardTitle{
+    margin-top:2%;
+    text-align:center;
+    color:#ffffff;
+}
+#buttonRegister {
+    background-color: #d1b2d8;
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    width:110px;
+    height:37px;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+#buttonRegister:hover{
+    background-color: #cb9cd6;
+}
+h4{
+    margin-top:3%;
+    text-align:center;
+}
+.tableElem, .tabelaROW,.insertedTable{
     display: flex;
     flex-direction: column;
     width: 100%;
     min-height: 100px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*header,
+table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   min-height: 100px;
     margin:auto;
     justify-content: center;
     align-items: center;
@@ -94,23 +129,5 @@ input, textarea{
     width: 30%;
     background-color: white;
     height:20px;
-}
-button {
+}*/
 
-    background-color: #d1b2d8;
-    border-radius: 8px;
-    border-style: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    width:110px;
-    height:37px;
-    margin-left:37%;
-    padding: 10px 16px;
-    text-align: center;
-    text-decoration: none;
-
-  }
-  button:hover{
-    background-color: #cb9cd6;
-  }

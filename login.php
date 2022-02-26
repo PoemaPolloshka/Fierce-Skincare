@@ -3,11 +3,7 @@ include_once 'login-validimi.php';
 $val=new Validimi();
 $val->validimi();
 
-//session_start();
 if(!isset($_SESSION['email']) ){
- header("location:projekti.php");
-}else{
-
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +41,9 @@ if(!isset($_SESSION['email']) ){
 </html>
 <?php
 
+}else{
+ header("location:projekti.php");
 }
-
 /*include_once 'FormValidation.php';
 $forma = new FormValidation();
 if(isset($_POST['email']) && isset($_POST['password'])){

@@ -1,13 +1,4 @@
-<?php
 
-/*session_start();
-if(!isset($_SESSION['email'])){
- header("location:login.php");
-}else if($_SESSION['role'] != "admin"){
-*/
-
-
-?>
 <?php
 include_once 'controllers/ProduktController.php';
 
@@ -111,7 +102,3 @@ include 'footer.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
-
-<?php
- //}
- ?>

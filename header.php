@@ -16,22 +16,11 @@ if (isset($_GET['logout'])) {
 }
 ?>
 
-<?php
-include_once 'login-validimi.php';
-$val = new Validimi();
-$val->validimi();
-
-$hide = "";
-
-if (!isset($_SESSION['email'])) {
-    header("location:login.php");
-} else {
-    if ($_SESSION['role'] == "admin") {
-        $hide = "";
-    } else {
-        $hide = "hide";
+<style>
+    .linkat{
+        color:black;
     }
-    ?>
+</style>
 <div class="headerdiv">
         <img src="img/logo.png" id="logostyle">
         <div class="iconDiv">
@@ -42,7 +31,7 @@ if (!isset($_SESSION['email'])) {
             <a class="iconbuttons" href='header.php?logout=true'><i class="fa fa-sign-out"></i></a>
  
         </div>
-    <form id="headerForm" method="POST">
+    <form id="headerForm" method="POST" action="searchResults.php">
         <input type="search" placeholder="Search" name="search" aria-label="Search through site content" id="inputHeader">
         <button id="buttonHeader" name='submitS'>
           <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 
@@ -55,7 +44,7 @@ if (!isset($_SESSION['email'])) {
   
     </div>
 
-          <div class="field ">
+          <div class="field " >
            <p class="linkat-p">   
          <a href="projekti.php" class="linkat  ">HOME</a> &nbsp;&nbsp; 
           <a href="shop.php" class="linkat "> SHOP</a> &nbsp; &nbsp; 
@@ -69,5 +58,7 @@ if (!isset($_SESSION['email'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <?php
-}
+
+include_once 'controllers/search.php';
+
 ?>

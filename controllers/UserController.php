@@ -1,11 +1,11 @@
 <?php
-include_once ('config/database.php');
+include_once ('config/DataBase.php');
 
 class UserController{
   public $db;
 
   public function __construct(){
-      $this->db=new Database();
+      $this->db=new DataBase();
   }
 
 
@@ -26,7 +26,7 @@ class UserController{
        ':password' => $request['password'],
        ':NumriTel' => $request['number']
     ]);
-  header("Location: shop.php");
+  //header("Location: shop.php");
   }
 
   public function edit($id){

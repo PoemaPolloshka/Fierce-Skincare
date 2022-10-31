@@ -43,7 +43,7 @@ include_once 'header.php';
    <center>
             <h3 style="color:white; margin-top:1%"> ADD PRODUCT </h3>
         <div id="formulari">
-            <form action='' method="POST">
+            <form action='' method="POST" style="background-color:white">
                 <label id="product">Product title</label>
                 <input type="text" id="inp" name="emri" placeholder="Type here" value="<?php echo $currentID['emri']; ?>">
                 <label>Description</label>

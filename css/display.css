@@ -1,0 +1,99 @@
+*
+{
+margin:0;
+padding:0;
+}
+body{
+    font-family: 'Segoe UI light', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;   
+    font-size: 13px;
+    max-height:1000px;
+}
+
+#a1{
+display: flex;
+flex-direction: column;
+width: 60%;
+margin:0 auto;
+background-color: rgb(215, 216, 228);
+}
+
+.tableElem{
+display: flex;
+flex-direction: column;
+width: 100%;
+min-height: 100px;
+margin: auto;
+justify-content: center;
+align-items: center;
+}
+
+#dashboardTitle{
+    font-size:15pt;
+    text-align: center;
+    color:red;
+}
+#dashboardTitle{
+text-align: center;
+font-size: 14pt;
+font-weight: bolder;
+padding:5px 0px;
+}
+
+#r{
+    background-color: #d1b2d8;
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    width:110px;
+    height:37px;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+#r:hover{
+    background-color: #cb9cd6;
+}
+
+td{
+width: 100px;
+padding:
+5px;
+}
+th{
+background-color: green(56, 21, 212);
+color: rgb(202, 214, 214);
+padding:
+5px;
+font-size: 14pt;
+}
+.tableElem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 100px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+#de{
+width: 80px;
+display: flex;
+justify-content: center;
+padding-right:5px;
+width: 100%;
+}
+
+#d{
+background-color: red;
+}
+
+#e{
+background-color: orange;
+}
+
+tr:nth-child(odd){
+background-color: rgb(148, 145, 148);
+}

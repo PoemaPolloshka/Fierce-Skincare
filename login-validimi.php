@@ -1,16 +1,15 @@
 <?php
-include 'config/database.php';
+include_once 'config/DataBase.php';
 
 class Validimi
 {
-    // public $email = $_POST['email'];
-    // public $password = $_POST['password'];
+  
     public $db;
     public $rows;
 
     public function __construct()
     {
-        $this->db = new Database();
+        $this->db = new DataBase();
     }
 
     public function validimi()
@@ -18,7 +17,7 @@ class Validimi
 
         if (isset($_POST['butoniLogIn'])) {
             if (empty($_POST['email']) || empty($_POST['password'])) {
-                echo "Fill all fields!";
+                echo "<script> alert('Fill all fields!')</script>";
             } else {
 
                 $sql = "SELECT  email, password, roli  FROM users where email = '" . $_POST['email'] . "' and password = '" . $_POST['password'] . "'";

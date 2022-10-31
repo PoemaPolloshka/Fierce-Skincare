@@ -1,4 +1,19 @@
+<?php
+include_once 'login-validimi.php';
+$val = new Validimi();
+$val->validimi();
 
+$hide = "";
+
+if (!isset($_SESSION['email'])) {
+    header("location:login.php");
+} else {
+    if ($_SESSION['role'] == "admin") {
+        $hide = "";
+    } else {
+        $hide = "hide";
+    }
+    ?>
 <!DOCTYPE html>
 <html>
     <head> <meta charset="utf-8">
@@ -117,7 +132,7 @@
             </figure>
             </div>
 
-        <div class="content">
+      <div class="content">
             <div class="absolute one">
                 <img src="img/backgroundcolor.png" id="imgStyle">
                 <h1 class="centered"> DEHYDRATED</h1>
@@ -172,4 +187,6 @@ include_once 'footer.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
-
+<?php
+}
+?>

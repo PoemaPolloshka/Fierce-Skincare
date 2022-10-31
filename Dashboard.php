@@ -10,6 +10,7 @@ if (!isset($_SESSION['email'])) {
     if ($_SESSION['role'] != "admin") {
         header("location:projekti.php");
     } else {
+        
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@ if (!isset($_SESSION['email'])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href ="css/insertStyle.css"/>
+       <link rel="stylesheet" href ="css/insertStyle.css"/>
         <link rel="stylesheet" href ="css/dashStyle.css"/>
     </head>
     <body>
@@ -29,44 +30,45 @@ if (!isset($_SESSION['email'])) {
         include_once 'header.php';
         ?>
             <div class = "TitleForRegister">
-                <h3 id="dashboardTitle">Ju lutem shtype per te regjistruar te dhenat ne Sistem</h3>
-                <a href="insert.php"><Button id='buttonRegister'>Regjistrohu</Button></a>
+                <h3 id="dashboardTitle">Click to add products</h3>
+                <a href="insert.php"><Button id='buttonRegister'>Register</Button></a>
             </div>
-            <div class="">
-            <table class ="tableElem">
-            <h4>Lista e te dhenave:</h4>
+         <table class ="tableElem" style="height:fit-content">
+            <h4>List of Products</h4>
                     <tr class="tabelaROW">
-                        <th>Emri</th>
-                        <th>Pershkrimi</th>
-                        <th>Foto</th>
-                        <th>Qmimi</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th id="titleqmimi">Price</th>
+                        <th>User</th>
                         <th>Action</th>
+                      
                     </tr>
-            </table>
-            <table class="insertedTable">
-                    <tr class="tabelaROW">
+            <tr class="insertTableROW">
                       <?php
                       foreach((array)$data as $key=>$value){
                         ?>
-                        <td><?php echo $value['emri']?></td><br>
-                        <td><?php echo $value['pershkrimi']?></td><br>
-                        <td><?php echo $value['foto']?></td><br>
-                        <td><?php echo $value['qmimi']?></td><br>
+                        <td><?php echo $value['emri']?></td>
+                        <td><?php echo $value['pershkrimi']?></td>
+                        <td><?php echo $value['foto']?></td>
+                        <td id="qmimi"><?php echo $value['qmimi']?></td>
+                        <td ><?php echo $_SESSION['email'];?></td>
+
                         <td id='de'><a href="delete.php?id=<?php echo $value['id']; ?>">
                         <button name="delete" id="d">DELETE</button></a>
-                        <a href="edit.php?id=<?php echo $value['id']; ?>"><button  id='e'>EDIT</button></td></a>
+                        <a href="edit.php?id=<?php echo $value['id']; ?>"><button id='e' name='edit'>EDIT</button></td></a>
                     </tr> 
                     <?php
                 }
                 ?>
             </table>
-              
+        </div>      
         <?php
-    }
+          }
         include_once "footer.php";
         ?>
     </body>
 </html>     
 <?php
-                      }
-                    ?> 
+  }
+     ?> 

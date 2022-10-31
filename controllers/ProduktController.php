@@ -1,5 +1,5 @@
 <?php
-include_once ('config/database.php');
+include_once ('config/DataBase.php');
 
 class ProduktController  {
   public $db;
@@ -17,7 +17,7 @@ class ProduktController  {
   $this->pershkrimi=$pershkrimi;
   $this->foto=$foto;
   $this->qmimi=$qmimi;
-      $this->db=new Database();
+      $this->db=new DataBase();
   }
 
 
@@ -92,15 +92,8 @@ public function update($request, $id){
     $query->bindParam(':qmimi', $request['qmimi']);
     $query->bindParam(':id', $id);
     $query->execute();
-
     return header('Location: Dashboard.php');
-}/*
-public function updateDhenat(){
-  $sql='UPDATE Studenti SET emri=?, pershkrimi=?, foto=?, qmimi=? where id=?';
-
-  $stm=$this->dbconn->prepare($sql);
-  $stm->execute([$this->emri, $this->mbiemri,$this->departamenti,$this->adresa, $this->id]);
-}*/
+}
 
 public function  delete($id){
   $query=$this->db->pdo->prepare('DELETE  from produktet where id=:id');

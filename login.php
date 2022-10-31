@@ -1,4 +1,35 @@
+<?php
+/*include_once 'controllers/UserController.php';
+
+$user = new UserController();
+include_once 'Input.php';
+include_once 'FormValidate.php';
+$validate=new FormValidate();
+
+if(Input::exists()){
+    $validate=new FormValidate();
+    $validation = $validate->check($_POST, array (
+      'password' => array(
+          'required' => true,
+          'min' => 6
+      ),
+      'email' => array(
+          'required' => true,
+          'correct'=>" (\w\.?)+@[\w\.-]+\.\w{2,}"
+      ) ));
+  }
+if($validate->passed()){
+     echo "<script> prompt ('Data was added successfully!!');</script>";
+ }else{
+foreach($validate->errors() as $errors){
+ echo "<script> alert($errors+' <br>');</script>" ;
+}
+}
+  
+ */
+?>
 <?php 
+
 include_once 'login-validimi.php';
 $val=new Validimi();
 $val->validimi();
@@ -13,14 +44,13 @@ if(!isset($_SESSION['email']) ){
       <title>Log-in</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!--  <link rel="stylesheet" href="assets/css/style.css">-->
       <link rel="stylesheet"  href="css/style-login.css"  ></head>
    
             <body>  
               <div id="main-div" style="background-image: url(img/slideshow3.jpg);">
                 <div class="login-div" >
           
-                <form class="aa" name="myform" method="POST" action="login.php" onsubmit="return validateform()" >  
+                <form class="aa" name="myform" method="POST"  onsubmit="return validateform()" >  
     
               <h1 >Login form</h1>
               <input type="email" class="inputi" name="email"placeholder="Enter e-mail">

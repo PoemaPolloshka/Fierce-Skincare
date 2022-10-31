@@ -16,7 +16,7 @@ if (!isset($_SESSION['email'])) {
     ?>
 
 
-    <html>
+<html>
     <head>
         <style>
             .footer-dark .item.social > a {
@@ -26,15 +26,40 @@ if (!isset($_SESSION['email'])) {
             .hide {
                 display: none;
             }
+            .divSkininfo{
+                align-self: center;
+                height: 550px;
+                background-color:#d7cbd9; 
+                margin:auto;
+                width: 90%;
+            }
+
+            .purpleDiv{
+        float: left;
+        background-color:rgb(215, 203, 217);   
+        height:530px;
+        width: 100%;
+        box-sizing: border-box;
+         display:block ;
+        }
+
+        .divpolicy{
+        width: 380px;
+        height: 420px;
+        background-color:white;
+        margin: 50px auto 30px;
+        padding-top: 20px;
+        width: 80%;
+    }
         </style>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/projectstyle.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/shopstyle.css">
+       <!-- <link rel="stylesheet" href="css/shopstyle.css">-->
+        <link rel="stylesheet" type="text/css" href="css/insertstyle.css">
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="css/projectstyle.css">
-        <link rel="stylesheet" type="text/css" href="css/insertstyle.css">
 
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,31 +73,32 @@ if (!isset($_SESSION['email'])) {
 
     ?>
 
-    <div class="slideshow-container">
+<div class="slideshowDiv">
         <div class="mySlides fade">
-            <img src="img/slideshow1.jpg" class="slideshowpic">
-        </div>
+    <img src="img/slideshow1.jpg" class="slideshowpic">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="img/slideshow2.jpg" class="slideshowpic">
+   
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="img/slideshow3.jpg" class="slideshowpic">
+  </div>
+  
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <script src="main.js"></script>
+</div>
+</div>
 
-        <div class="mySlides fade">
-            <img src="img/slideshow2.jpg" class="slideshowpic">
 
-        </div>
-
-        <div class="mySlides fade">
-            <img src="img/slideshow3.jpg" class="slideshowpic">
-        </div>
-
-    </div>
-    <br>
-    <div style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <script src="main.js"></script>
-    </div>
-
-    </div>
-    <div class="white-main">
+   <div class="whiteMain">
         <div class="divSkininfo">
             <h1 id="styleTitleSI">Recommendation</h1>
             <div class="bodySI">
@@ -85,7 +111,7 @@ if (!isset($_SESSION['email'])) {
                         <h3 class="name">For oily skin</h3>
                         <a href="Concerns.html  " id="linkSI" class="linkat">Read more</a>
                     </figure>
-                </div>
+        </div>
                 <div class="divforteam dry">
                     <figure>
                         <img class="picture dry" src="img/dry3.png">
@@ -134,8 +160,8 @@ if (!isset($_SESSION['email'])) {
 
 
     <div>
-        <div class="purple-div">
-            <div id="div-policy">
+        <div class="purpleDiv">
+            <div class="divpolicy">
 
                 <div class="para-div">
                     <p class="para">Our policy</p>
@@ -170,7 +196,7 @@ if (!isset($_SESSION['email'])) {
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
     <?php
     include_once 'footer.php';
@@ -182,6 +208,9 @@ if (!isset($_SESSION['email'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>
+    <?php
+ 
+?>>
     <?php
 }
 ?>

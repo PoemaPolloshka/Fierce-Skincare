@@ -3,131 +3,85 @@
     padding: 0;
 }
 body {
-    font-family:"Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: #d7cbd9;   
     font-size: 13px;
+    max-height:1000px;
 }
 
-.TitleForRegister, .dashboardTitle{
-    margin-top:2%;
-    text-align:center;
-    color:#ffffff;
-}
-#buttonRegister {
-    background-color: #d1b2d8;
-    border-radius: 8px;
-    border-style: none;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    width:110px;
-    height:37px;
-    padding: 10px 16px;
-    text-decoration: none;
-}
-#buttonRegister:hover{
-    background-color: #cb9cd6;
+.TitleForRegister{
+    padding-top:3%;
+    color:white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin:0 auto;
 }
 h4{
     margin-top:3%;
     text-align:center;
+    color:white;
 }
-.tableElem, .tabelaROW,.insertedTable{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100px;
-    margin:auto;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/*header,
-table {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-   min-height: 100px;
-    margin:auto;
-    justify-content: center;
-    align-items: center;
-}
-#formulari {
-    display: flex;
-    flex-direction: column;
-   justify-content: center;
-    width: 40%;
-    min-height: 600px;
-   margin-top: 1.7%;
-   text-align: left;
-    color: rgb(58, 57, 57);
-}
-
-form {
-    width: 100%;
-    height: 600px;
-    display: flex;
-   flex-direction: column;
-   border-radius: 0.5em;
-   background-color: white;
-   padding-top: 2%;
-}
-input,
-label,textarea,select {
+td{
     width: 200px;
-    min-height: 3%;
-    padding: 5px;
-    margin-left: 35px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(34, 34, 34);
 }
-input, textarea{
-    margin-bottom:6%;
-    width:80%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-#product{
-    margin-top:1%;
-}
-#inp{
-    height:20px;
-}
-  #fotoParagh{
-    width:320px;
-    height: 100px;
-    margin-left:18%;
-    background-color: rgb(236, 235, 235);
-    border: 3px dashed #ccc;
-    text-align: center;
-    line-height:120px;
-    color: #181515;
-  }
-  #fotoInput{
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    margin-left:6.7%;
-    width:330px;
-    height: 110px;
-    outline: none;
-    opacity: 0;
-  }
-
-.priceDiv{
+.tableElem{
+    display: flex;
     flex-direction: row;
-}
-#pricelabel{
-    margin-top:8%;
-}
-#price{
-    width:35%;
-    height:20px;
-}
-#euro{
-    width: 30%;
+    justify-content: space-evenly;
     background-color: white;
-    height:20px;
-}*/
+    width: fit-content;
+    height:fit-content;
+    margin:auto;
+    padding-left:1%;
+    margin-top:3%;
+    margin-bottom:5%;
+  
+}
+.tableElem, tr{
+    border: 1px solid #c2a6c9;
+    border-left:none;
+}
+#buttonRegister {
+        background-color: #d1b2d8;
+        border-radius: 8px;
+        border-style: none;
+        font-size:12pt;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        width:110px;
+        height:45px;
+        padding: 10px 16px;
+        text-decoration: none;
+    }
+#buttonRegister:hover{
+    background-color: #c686d4;
+    }
+
+  #d,#e{
+    background-color: #c2a6c9;
+        border-radius: 8px;
+        border-style: none;
+        font-size:12px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        width:80px;
+        height:28px;
+        padding: 10px 16px;
+        text-decoration: none;
+}
+.tabelaROW, .insertTableROW, td{
+    height:40px;
+}
+
+#qmimi,#titleqmimi{
+    text-align: center;
+}
+
+
+
+
 

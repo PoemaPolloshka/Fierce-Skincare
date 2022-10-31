@@ -74,8 +74,13 @@ background-color: #d7cbd9;
   background-color: #d7cbd9;
   height:50px;
 }
+.slideshowDiv {
+  height:550px;
+  background-color:#d7cbd9;
+}
 .slider{
-  height: 600px;
+  height:fit-content;
+  background-color: #d7cbd9;
 }
 .sliderimg{
   width:100%;
@@ -88,12 +93,6 @@ background-color: #d7cbd9;
   display: none;
 }
 
-.slideshow-container {
-  height:550pt;
-  position: flex;
-  margin: auto;
-  z-index: 10;
-}
 .slideshowpic{
   height:550px;
   width: 100%;
@@ -164,23 +163,18 @@ background-color: #d7cbd9;
     padding-top: 109px;
     padding-left: 770px;
 }
-.white-main{
+
+.whiteMain{
 margin-bottom: 20px;
-position: relative;
+position: fixed;
 background-color:white;   
-height:260px;
+height:570pt;
 width: 100%;
 box-sizing: border-box;
 clear: none;
 display:block ; 
 }
-.divSkininfo{
-  align-self: center;
-  height: 550px;
-  background-color:#d7cbd9;
-margin-bottom:0px ; 
- width: 90%;
-}
+
 #styleTitleSI{
   color:rgba(138, 103, 138, 0.815);;
   text-align: center;
@@ -190,9 +184,10 @@ margin-bottom:0px ;
 }
 .bodySI{
         display: flex;
+        position: fixed;
         flex-direction: row;
+        width: 100%;;
         justify-content: space-evenly;
-        min-height: 100px;
         margin-left: 20px;
         flex-wrap: wrap;
         margin-top: 5%;
@@ -237,16 +232,16 @@ display: block;
   font-weight: bold;
   /*text-decoration:none;*/
 }
-.purple-div{
 
-  position: absolute;
+.purple-div{
+ /* position: absolute;*/
   float: left;
   background-color:rgb(215, 203, 217);   
   height:530px;
   width: 100%;
   box-sizing: border-box;
   clear: none;
-  display:block ;
+ /* display:block ;*/
 }
 #div-policy{
   
